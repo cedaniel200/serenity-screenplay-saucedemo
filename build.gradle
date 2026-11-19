@@ -5,22 +5,20 @@ buildscript {
     }
     ext{
         serenityVersion = '5.4.1'
-        serenityGradlePluginVersion = '2.4.34'
         serenityCucumberVersion = '5.4.1'
 
         slf4jVersion = '2.0.20'
     }
-    dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:$rootProject.ext.serenityGradlePluginVersion")
-    }
+}
+
+plugins {
+    id 'java'
+    id 'idea'
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '5.4.1'
 }
 
 group = 'co.com.yourcompany.certification'
 version = '1.0.0'
-
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'net.serenity-bdd.aggregator'
 
 java {
     toolchain {
